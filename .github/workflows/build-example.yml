@@ -4,6 +4,10 @@ jobs:
   export_game:
     runs-on: ubuntu-latest
     name: Export Game Job
+    env:
+      GODOT_ANDROID_KEYSTORE_DEBUG_PATH: ./examples/project-godot-4/debug.keystore
+      GODOT_ANDROID_KEYSTORE_DEBUG_USER: androiddebugkey
+      GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD: android
     steps:
       - name: checkout
         uses: actions/checkout@v3.3.0
@@ -23,11 +27,11 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Setup Godot Editor Settings
-        run: |
-            mkdir -p ~/.config/godot
-            cp ./examples/project-godot-4/editor_settings-4.tres ~/.config/godot/editor_settings-4.tres
-            cp ./examples/project-godot-4/debug.keystore ~/.config/godot/debug.keystore
+      # - name: Setup Godot Editor Settings
+      #   run: |
+      #       mkdir -p ~/.config/godot
+      #       cp ./examples/project-godot-4/editor_settings-4.tres ~/.config/godot/editor_settings-4.tres
+      #       cp ./examples/project-godot-4/debug.keystore ~/.config/godot/debug.keystore
 
       - name: export game
         id: export
