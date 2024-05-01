@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Export Game Job
     env:
-      GODOT_ANDROID_KEYSTORE_DEBUG_PATH: ${{ github.workspace }}/godot-export/examples/project-godot-4/debug.keystore
+      GODOT_ANDROID_KEYSTORE_DEBUG_PATH: ${{ github.workspace }}/examples/project-godot-4/debug.keystore
       GODOT_ANDROID_KEYSTORE_DEBUG_USER: androiddebugkey
       GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD: android
     steps:
