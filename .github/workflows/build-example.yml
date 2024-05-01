@@ -23,6 +23,9 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
+      - name: Setup Godot Editor Settings
+        run: |
+            cp ./examples/project-godot-4/editor_settings-4.tres ~/.config/godot/editor_settings-4.tres
 
       - name: export game
         id: export
